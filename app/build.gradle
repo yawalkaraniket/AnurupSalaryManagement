@@ -1,0 +1,134 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    signingConfigs {
+        debug {
+            storePassword '123@Anurup.co.in'
+            keyAlias 'Anurup'
+            keyPassword '123@Anurup.co.in'
+            storeFile file('/home/lt-421/Downloads/SalaryManagement/salary-management-key.jks')
+        }
+        uat {
+            storePassword '123@Anurup.co.in'
+            keyAlias 'Anurup'
+            keyPassword '123@Anurup.co.in'
+            storeFile file('/home/lt-421/Downloads/SalaryManagement/salary-management-key.jks')
+        }
+        stage {
+            storePassword '123@Anurup.co.in'
+            keyAlias 'Anurup'
+            keyPassword '123@Anurup.co.in'
+            storeFile file('/home/lt-421/Downloads/SalaryManagement/salary-management-key.jks')
+        }
+        release {
+            storePassword '123@Anurup.co.in'
+            keyAlias 'Anurup'
+            keyPassword '123@Anurup.co.in'
+            storeFile file('/home/lt-421/Downloads/SalaryManagement/salary-management-key.jks')
+        }
+    }
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.home.salaryuses"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        uat {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        stage {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding {
+            enabled = true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    flavorDimensions "main"
+
+    productFlavors {
+
+        anurup {
+            dimension "main"
+            applicationIdSuffix ".anurup"
+
+            buildConfigField 'String', 'API_ENDPOINT', "\"https://anurup.anurup-home.com/api/\""
+            buildConfigField 'String', 'API_DEV_ENDPOINT', "\"https://anurup-dev2.anurup-home.com/api/\""
+            buildConfigField 'String', 'APP_ID', "\"anurup\""
+        }
+
+        money {
+            dimension "main"
+            applicationIdSuffix ".money"
+
+            buildConfigField 'String', 'API_ENDPOINT', "\"https://money.anurup-home.com/api/\""
+            buildConfigField 'String', 'API_DEV_ENDPOINT', "\"https://money-dev2.anurup-home.com/api/\""
+            buildConfigField 'String', 'APP_ID', "\"money\""
+        }
+
+        poems {
+            dimension "main"
+            applicationIdSuffix ".poems"
+
+            buildConfigField 'String', 'API_ENDPOINT', "\"https://poems.anurup-home.com/api/\""
+            buildConfigField 'String', 'API_DEV_ENDPOINT', "\"https://poems-dev2.anurup-home.com/api/\""
+            buildConfigField 'String', 'APP_ID', "\"poems\""
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        main.java.srcDirs += 'src/debug/kotlin'
+    }
+    namespace 'com.home.salaryuses'
+
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0-alpha02'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.annotation:annotation:1.6.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

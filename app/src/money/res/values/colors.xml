@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#7B1FA2</color>   <!-- Don't forget to change primary_ripple and primary_with_semiopaque too -->
+    <color name="primary_background">#E0DBDB</color>
+
+    <color name="primary_semi_trans">#C47B1FA2</color>
+    <color name="primary_trans">#437B1FA2</color>
+</resources>
