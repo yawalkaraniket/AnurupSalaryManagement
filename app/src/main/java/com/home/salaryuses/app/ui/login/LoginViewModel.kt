@@ -5,8 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
 import com.home.salaryuses.R
-import com.home.salaryuses.app.data.LoginRepository
-import com.home.salaryuses.app.data.Result
+import com.home.salaryuses.app.ui.login.data.LoginRepository
+import com.home.salaryuses.app.ui.login.data.Result
+import com.home.salaryuses.app.ui.login.ui.login.LoginFormState
+import com.home.salaryuses.app.ui.login.ui.login.LoginResult
 
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
@@ -41,7 +43,7 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
 
     // A placeholder username validation check
     private fun isUserNameValid(username: String): Boolean {
-        return if (username.contains('@')) {
+        return if (username.contains("@")) {
             Patterns.EMAIL_ADDRESS.matcher(username).matches()
         } else {
             username.isNotBlank()

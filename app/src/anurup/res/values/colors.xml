@@ -3,4 +3,7 @@
 
     <color name="primary">#070707</color>   <!-- Don't forget to change primary_ripple and primary_with_semiopaque too -->
     <color name="primary_background">#7F7A7B</color>
+
+    <color name="primary_semi_trans">#BF070707</color>
+    <color name="primary_trans">#0F070707</color>
 </resources>

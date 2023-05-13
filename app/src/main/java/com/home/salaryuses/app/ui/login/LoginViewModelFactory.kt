@@ -1,9 +1,10 @@
-package com.home.salaryuses.app.ui.login
+package com.home.salaryuses.app.ui.login.ui.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.home.salaryuses.app.data.LoginDataSource
-import com.home.salaryuses.app.data.LoginRepository
+import com.home.salaryuses.app.ui.login.LoginViewModel
+import com.home.salaryuses.app.ui.login.data.LoginDataSource
+import com.home.salaryuses.app.ui.login.data.LoginRepository
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

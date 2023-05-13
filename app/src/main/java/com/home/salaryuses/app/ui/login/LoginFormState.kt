@@ -1,4 +1,4 @@
-package com.home.salaryuses.app.ui.login
+package com.home.salaryuses.app.ui.login.ui.login
 
 /**
  * Data validation state of the login form.

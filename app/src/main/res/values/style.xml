@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.BankJoy.Button" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.BankJoy.Button</item>
+        <item name="backgroundTint">@color/primary</item>
+    </style>
+    <style name="ShapeAppearance.BankJoy.Button"
+        parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">@dimen/button_corner_radius_big</item>
+    </style>
+
+    <style name="TextAppearance.BankJoy.Body1"
+        parent="@style/TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/nunito_regular</item>
+        <item name="android:textColor">@color/ic_launcher_background</item>
+    </style>
+</resources>
